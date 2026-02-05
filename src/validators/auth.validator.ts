@@ -1,36 +1,10 @@
 import { UserSignupInterface } from '../interfaces/user.interface.js'
-
-class AuthError extends Error {
-  name = 'AuthenticationError'
-}
-
-class InvalidNameError extends AuthError {
-  constructor(val: string) {
-    super(`Invalid name: ${val}`)
-    this.name = 'InvalidNameError'
-  }
-}
-
-class InvalidUsernameError extends AuthError {
-  constructor(val: string) {
-    super(`Invalid username: ${val}`)
-    this.name = 'InvalidUsernameError'
-  }
-}
-
-class InvalidEmailError extends AuthError {
-  constructor(val: string) {
-    super(`Invalid email: ${val}`)
-    this.name = 'InvalidEmailError'
-  }
-}
-
-class InvalidPasswordError extends AuthError {
-  constructor(val: string) {
-    super(`Invalid password: ${val}`)
-    this.name = 'InvalidPasswordError'
-  }
-}
+import {
+  InvalidNameError,
+  InvalidEmailError,
+  InvalidUsernameError,
+  InvalidPasswordError,
+} from '../error/authentication/authError.js'
 
 export default class AuthValidator {
   private readonly NAME_REGEX = /^[\p{L}\s'-]{2,50}$/u
