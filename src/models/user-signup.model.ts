@@ -1,6 +1,6 @@
 import { UserSignupInterface } from '../interfaces/user.interface.js'
 
-export default class UserSignup implements UserSignupInterface {
+export default class UserSignupModel implements UserSignupInterface {
   public email: string
   public password: string
   public name: string
